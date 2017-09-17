@@ -6,7 +6,7 @@ def main():
 
     #get chapters
 
-    page = subprocess.check_output(["curl", "http://ww1.tokyoghoulre.com/chapter/tokyo-ghoulre-chapter-001/"])
+    page = subprocess.check_output(["curl", "http://ww2.tokyoghoulre.com/chapter/tokyo-ghoulre-chapter-001/"])
     chapters = re.findall(r'value="(.*?)"', page)
 
     for chapter in chapters:
@@ -20,7 +20,7 @@ def main():
         for src in srcs:
             src_name = src.split('/')
             src_name = src_name[-2]
-            subprocess.call(["wget", src, "-O", "tokyo_re/" + name + str(i) + "-" + src_name +".png"])
+            subprocess.call(["wget", src, "-O", "tokyo_re/" + name + "/" + str(i) + "-" + src_name +".png"])
             i = i + 1
 
 if __name__ == '__main__':
